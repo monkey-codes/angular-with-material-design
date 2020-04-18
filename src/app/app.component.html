@@ -1,33 +1,14 @@
-<mat-toolbar color="primary" [class.mat-elevation-z6]="true">
-  <button mat-icon-button color="accent"
-          aria-label="Example icon button with a menu icon"
-          (click)="sidenav.toggle()">
-    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
-    <mat-icon *ngIf="sidenav.opened">menu_open</mat-icon>
-  </button>
-  <h1>App</h1>
-  <a mat-flat-button href="#" color="primary">Link 1</a>
-  <a mat-flat-button href="#" color="primary">Link 2</a>
-</mat-toolbar>
+<app-header (menuToggled)="sidenav.toggle()" [opened]="sidenav.opened"></app-header>
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
-    <mat-nav-list>
-      <h1 class="mat-h1">Menu</h1>
-      <mat-list-item><mat-icon>account_circle</mat-icon> Option 1</mat-list-item>
-      <mat-list-item><mat-icon>assignment</mat-icon> Option 2</mat-list-item>
-      <mat-list-item><mat-icon>poll</mat-icon> Option 3</mat-list-item>
-      <mat-list-item><mat-icon>whatshot</mat-icon> Option 4</mat-list-item>
-    </mat-nav-list>
+    <app-side-nav></app-side-nav>
   </mat-sidenav>
   <mat-sidenav-content>
     <main>
       <router-outlet></router-outlet>
     </main>
-    <footer class="footer mat-toolbar mat-toolbar-single-row mat-primary">
-      footer
-    </footer>
+    <app-footer></app-footer>
   </mat-sidenav-content>
-
 </mat-sidenav-container>
 
 

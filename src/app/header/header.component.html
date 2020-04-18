@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" [class.mat-elevation-z6]="true">
+  <button mat-icon-button color="accent"
+          aria-label="Example icon button with a menu icon"
+          (click)="menuToggled.emit(true)">
+<!--    <mat-icon>menu</mat-icon>-->
+    <mat-icon *ngIf="!opened">menu</mat-icon>
+    <mat-icon *ngIf="opened">menu_open</mat-icon>
+  </button>
+  <a mat-flat-button color="primary" routerLink="/"><h1>App</h1></a>
+  <a mat-flat-button routerLink="/content" color="primary">Content Layout</a>
+  <a mat-flat-button href="#" color="primary">Link 2</a>
+</mat-toolbar>
